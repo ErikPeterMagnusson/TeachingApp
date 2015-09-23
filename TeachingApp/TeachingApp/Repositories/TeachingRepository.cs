@@ -16,31 +16,50 @@ namespace TeachingApp.Repositories
             context = new TeachingContext();
         }
 
+        #region Picture Methods
         public Picture GetPictureById(int id)
         {
             return context.Picture.Single(i => i.ID == id);
         }
 
+        public bool ComparePicture(int id, string inputWord)
+        {
+            if (inputWord == context.Picture.Single(i => i.ID == id).Word)
+                return true;
+            else
+                return false;
+        }
+        #endregion
+
+        #region DifferentialText Methods
         public DifferentialText GetDifferentialTextById(int id)
         {
             return context.DifferentialText.Single(i => i.ID == id);
         }
+        #endregion
 
+        #region Color Methods
         public Color GetColorById(int id)
         {
             return context.Color.Single(i => i.ID == id);
         }
+        #endregion
 
+        #region Sentence Methods
         public Sentence GetSentenceById(int id)
         {
             return context.Sentence.Single(i => i.ID == id);
         }
+        #endregion
 
+        #region Question Methods
         public Question GetQuestionById(int id)
         {
             return context.Question.Single(i => i.ID == id);
         }
+        #endregion
 
+        #region Highscore Methods
         public Highscore GetHighscoreById(int id)
         {
             return context.Highscore.Single(i => i.ID == id);
@@ -50,7 +69,6 @@ namespace TeachingApp.Repositories
         {
             return context.Highscore.ToList();
         }
-
-        //todo: Add more convenient methods
+        #endregion
     }
 }
