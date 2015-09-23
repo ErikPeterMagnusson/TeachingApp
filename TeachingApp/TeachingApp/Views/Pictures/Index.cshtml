@@ -23,7 +23,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.DisplayFor(modelItem => item.Name.)
+        </td>
+        <td>
+            <img class="bild" src="~/@Model.Name" + ".jpg">
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Word)
@@ -37,3 +40,6 @@
 }
 
 </table>
+<div class="col-md-8" style="margin-top: 0px;">
+@*    <img class="bild" src="~/@DisplayFor(modelItem => item.Name).jpg">*@
+</div>
