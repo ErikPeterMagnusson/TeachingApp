@@ -177,6 +177,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\TeachingModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\TeachingRepository.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
