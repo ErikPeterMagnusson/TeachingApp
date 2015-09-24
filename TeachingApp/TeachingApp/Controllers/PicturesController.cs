@@ -16,11 +16,46 @@ namespace TeachingApp.Controllers
     {
         private TeachingRepository repo = new TeachingRepository();
 
-        // GET: Pictures
-        public ActionResult Index()
+        // GET: Pictures .GetPictureById(r.Next(1, 5))
+        public ActionResult Index(string message)
         {
+            ViewBag.Message = message;
             Random r = new Random();
-            return View(repo.GetPictureById(r.Next(1, 5)));
+            var picture = repo.GetPictureById(r.Next(1, 5));
+
+            PictureViewModel viewModel = new PictureViewModel()
+            {
+                 ID = picture.ID,
+                 Name = picture.Name,
+                 Word = picture.Word
+            };
+            return View(viewModel); //
+        }
+        // POST: Pictures/Index
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index([Bind(Include = "ID,Name,Word,UserResponse")] PictureViewModel viewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                if (repo.ComparePicture(viewModel.ID, viewModel.UserResponse))
+                {
+                    ViewBag.Message = "Good answer.";
+                    return RedirectToAction("Index", new { message = ViewBag.Message });
+                }
+                else
+                {
+                    ViewBag.Message = "Sorry! Wrong answer.";
+                    return View(viewModel);
+                }
+
+                return RedirectToAction("Index", new { message = ViewBag.Message });
+                //return View();
+            }
+
+            return View();
         }
         /*
         // GET: Pictures/Details/5
@@ -118,6 +153,14 @@ namespace TeachingApp.Controllers
             return RedirectToAction("Index");
         }
         */
+        // GET: Pictures/BildTest
+        //public ActionResult BildTest()
+        //{
+        //    PictureViewModel viewModel = new PictureViewModel();
+
+        //    return View(viewModel);
+        //}
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -17,6 +17,18 @@ namespace TeachingApp.Models
         public string Name { get; set; }
         public string Word { get; set; }
     }
+
+    //Viewmodel
+    //Innehållande all info för Picture (utom ID?)
+    //Och en extra string för det användaren kan vilja skriva
+    public class PictureViewModel
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string Word { get; set; }
+        public string UserResponse { get; set; }  
+    }
+
     // DATAMODEL FOR DIFFERENTIAL TEXT
     public class DifferentialText
     {

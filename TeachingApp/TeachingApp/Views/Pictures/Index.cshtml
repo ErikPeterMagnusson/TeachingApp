@@ -1,23 +1,30 @@
-﻿@model TeachingApp.Models.Picture
+﻿@model TeachingApp.Models.PictureViewModel
 
-@{
-    ViewBag.Title = "Bild Test";
+@{ViewBag.Title = "Bild Test";
 }
 
 <div class="col-md-offset-4 col-md-8" style="margin-top: 0px;">
     <h2>Bild test</h2>
     <img class="img-responsive" src="~/Images/@Url.Content(Model.Name)" width="400" height="300">
+    <h4>@ViewBag.Message</h4>
 </div>
 
-
+@using (Html.BeginForm("Index", "Pictures", FormMethod.Post))
+{
+@Html.AntiForgeryToken()
+    
 <div class="form-group">
     <div class="col-md-offset-4 col-md-8">
         <hr />
         Vad föreställer bilden?
-        <input type="text" id="newText">
-        <input type="submit" value="Tryck" class="btn btn-default" />
+        <input type="hidden" name="ID" value="@Model.ID">
+        <input type="hidden" name="Name" value="@Model.Name">
+        <input type="hidden" name="Word" value="@Model.Word">
+        <input type="text" name="UserResponse">
+        <input type="submit" value="Submit" class="btn btn-default" />
         <hr />
         @Html.ActionLink("End your Test", "Index", "Home")
     </div>
 </div>
+}
 
