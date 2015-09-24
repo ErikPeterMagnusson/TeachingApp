@@ -68,6 +68,13 @@ namespace TeachingApp.Repositories
         {
             return context.Sentence.Single(i => i.ID == id);
         }
+        public bool CompareSentence(int id, string inputSentence)
+        {
+            if (inputSentence == context.Sentence.Single(i => i.ID == id).Text)
+                return true;
+            else
+                return false;
+        }
         #endregion
 
         #region Question Methods

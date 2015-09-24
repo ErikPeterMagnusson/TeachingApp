@@ -1,11 +1,32 @@
-﻿@model TeachingApp.Models.Color
+﻿@model TeachingApp.Models.ColorViewModel
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Color Test";
 }
 
-<h2>Color</h2>
+<h4>@ViewBag.Message</h4>
 
-<p>
-    Click on the color @Model.ColorText
-</p>
+<h3>Click on the color @Model.ColorText</h3>
+
+@using (Html.BeginForm("index", "Colors", FormMethod.Post))
+{
+    <div class="form-group">
+        <hr />
+        <input type="hidden" name="ID" value="@Model.ID">
+        <input type="hidden" name="ColorText" value="@Model.ColorText">
+        <input type="button" name="UserResponse" class="btn-danger btn-lg" value="1" />
+        <input type="button" name="UserResponse" class="btn-success btn-lg" value="2" />
+        <input type="button" name="UserResponse" class="btn-primary btn-lg" value="3" />
+        <input type="button" name="UserResponse" class="btn-warning btn-lg" value="4" />
+        <input type="button" name="UserResponse" class="btn-default btn-lg" value="5" />
+        <hr />
+        @Html.ActionLink("End your Test", "Index", "Home")
+    </div>
+    /*
+    @Html.ActionLink("1", "Index", "Colors", new { ID = "1", UserResponse = @Model.ColorText }, new { @class = "btn-danger btn-lg" })
+    @Html.ActionLink("2", "Index", "Colors", new { ID = "2", UserResponse = @Model.ColorText }, new { @class = "btn-success btn-lg" })
+    @Html.ActionLink("3", "Index", "Colors", new { ID = "3", UserResponse = @Model.ColorText }, new { @class = "btn-primary btn-lg" })
+    @Html.ActionLink("4", "Index", "Colors", new { ID = "4", UserResponse = @Model.ColorText }, new { @class = "btn-warning btn-lg" })
+    @Html.ActionLink("5", "Index", "Colors", new { ID = "5", UserResponse = @Model.ColorText }, new { @class = "btn-default btn-lg" })
+    */
+}
