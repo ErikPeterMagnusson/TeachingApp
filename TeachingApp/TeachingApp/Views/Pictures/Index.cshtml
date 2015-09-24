@@ -6,7 +6,7 @@
 
 <div class="col-md-offset-4 col-md-8" style="margin-top: 0px;">
     <h2>Bild test</h2>
-    <img class="img-responsive" src="@Url.Content(Model.Name)" width="400" height="300">
+    <img class="img-responsive" src="~/Images/@Url.Content(Model.Name)" width="400" height="300">
 </div>
 
 
@@ -17,7 +17,7 @@
         <input type="text" id="newText">
         <input type="submit" value="Tryck" class="btn btn-default" />
         <hr />
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("End your Test", "Index", "Home")
     </div>
 </div>
 
