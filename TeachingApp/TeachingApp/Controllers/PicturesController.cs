@@ -16,12 +16,12 @@ namespace TeachingApp.Controllers
     {
         private TeachingRepository repo = new TeachingRepository();
 
-        // GET: 
+        // GET: Pictures .GetPictureById(r.Next(1, 6))
         public ActionResult Index(string message)
         {
             ViewBag.Message = message;
             Random r = new Random();
-            var picture = repo.GetPictureById(r.Next(1, 5));
+            var picture = repo.GetPictureById(r.Next(1, 6));
 
             PictureViewModel viewModel = new PictureViewModel()
             {
@@ -50,10 +50,13 @@ namespace TeachingApp.Controllers
                     ViewBag.Message = "Sorry! Wrong answer.";
                     return View(viewModel);
                 }
+
+                return RedirectToAction("Index", new { message = ViewBag.Message });
+                //return View();
             }
+
             return View();
         }
-
         /*
         // GET: Pictures/Details/5
         public ActionResult Details(int? id)
