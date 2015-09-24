@@ -44,6 +44,13 @@ namespace TeachingApp.Models
         public int ID { get; set; }
         public string ColorText { get; set; }
     }
+    public class ColorViewModel
+    {
+        [Key]
+        public int ID { get; set; }
+        public string ColorText { get; set; }
+        public string UserResponse { get; set; }
+    }
     // DATAMODEL FOR SENTENCE
     public class Sentence
     {

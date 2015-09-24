@@ -16,12 +16,12 @@ namespace TeachingApp.Controllers
     {
         private TeachingRepository repo = new TeachingRepository();
 
-        // GET: Pictures .GetPictureById(r.Next(1, 5))
+        // GET: Pictures .GetPictureById(r.Next(1, 6))
         public ActionResult Index(string message)
         {
             ViewBag.Message = message;
             Random r = new Random();
-            var picture = repo.GetPictureById(r.Next(1, 5));
+            var picture = repo.GetPictureById(r.Next(1, 6));
 
             PictureViewModel viewModel = new PictureViewModel()
             {

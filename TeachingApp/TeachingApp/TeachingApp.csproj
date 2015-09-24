@@ -269,10 +269,6 @@
     <Content Include="Views\DifferentialTexts\Details.cshtml" />
     <Content Include="Views\DifferentialTexts\Edit.cshtml" />
     <Content Include="Views\DifferentialTexts\Index.cshtml" />
-    <Content Include="Views\Colors\Create.cshtml" />
-    <Content Include="Views\Colors\Delete.cshtml" />
-    <Content Include="Views\Colors\Details.cshtml" />
-    <Content Include="Views\Colors\Edit.cshtml" />
     <Content Include="Views\Colors\Index.cshtml" />
     <Content Include="Views\Sentences\Create.cshtml" />
     <Content Include="Views\Sentences\Delete.cshtml" />

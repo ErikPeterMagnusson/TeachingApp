@@ -42,8 +42,8 @@ namespace TeachingApp.Migrations
                 new Models.Color { ID = 1, ColorText = "Red" },
                 new Models.Color { ID = 2, ColorText = "Green" },
                 new Models.Color { ID = 3, ColorText = "Blue" },
-                new Models.Color { ID = 4, ColorText = "Yellow" },
-                new Models.Color { ID = 5, ColorText = "Pink" }
+                new Models.Color { ID = 4, ColorText = "Orange" },
+                new Models.Color { ID = 5, ColorText = "White" }
                 );
 
             // SEED FOR SENTENCE
