@@ -13,6 +13,7 @@ namespace TeachingApp.DataConnectionlayer
     public class TeachingContext : DbContext
     {
         public TeachingContext() : base("DefaultConnection") { }
+
         public DbSet<Picture> Picture { get; set; }
         public DbSet<DifferentialText> DifferentialText { get; set; }
         public DbSet<Color> Color { get; set; }

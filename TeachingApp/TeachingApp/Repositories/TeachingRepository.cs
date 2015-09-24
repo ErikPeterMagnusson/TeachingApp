@@ -36,6 +36,14 @@ namespace TeachingApp.Repositories
         {
             return context.DifferentialText.Single(i => i.ID == id);
         }
+
+        public bool CompareDifferentialInput(int id, string differentialInput)
+        {
+            if (differentialInput == context.DifferentialText.Single(i => i.ID == id).GoodText)
+                return true;
+            else
+                return false;
+        }
         #endregion
 
         #region Color Methods
