@@ -8,19 +8,21 @@ using System.Web;
 using System.Web.Mvc;
 using TeachingApp.DataConnectionlayer;
 using TeachingApp.Models;
+using TeachingApp.Repositories;
 
 namespace TeachingApp.Controllers
 {
     public class PicturesController : Controller
     {
-        private TeachingContext db = new TeachingContext();
+        private TeachingRepository repo = new TeachingRepository();
 
         // GET: Pictures
         public ActionResult Index()
         {
-            return View(db.Picture.ToList());
+            Random r = new Random();
+            return View(repo.GetPictureById(r.Next(1, 5)));
         }
-
+        /*
         // GET: Pictures/Details/5
         public ActionResult Details(int? id)
         {
@@ -115,12 +117,12 @@ namespace TeachingApp.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        */
         protected override void Dispose(bool disposing)
         {
             if (disposing)
             {
-                db.Dispose();
+                repo.Dispose();
             }
             base.Dispose(disposing);
         }

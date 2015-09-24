@@ -1,45 +1,23 @@
-﻿@model IEnumerable<TeachingApp.Models.Picture>
+﻿@model TeachingApp.Models.Picture
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Bild Test";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Word)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name.)
-        </td>
-        <td>
-            <img class="bild" src="~/@Model.Name" + ".jpg">
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Word)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
-
-</table>
-<div class="col-md-8" style="margin-top: 0px;">
-@*    <img class="bild" src="~/@DisplayFor(modelItem => item.Name).jpg">*@
+<div class="col-md-offset-4 col-md-8" style="margin-top: 0px;">
+    <h2>Bild test</h2>
+    <img class="img-responsive" src="@Url.Content(Model.Name)" width="400" height="300">
 </div>
+
+
+<div class="form-group">
+    <div class="col-md-offset-4 col-md-8">
+        <hr />
+        Vad föreställer bilden?
+        <input type="text" id="newText">
+        <input type="submit" value="Tryck" class="btn btn-default" />
+        <hr />
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</div>
+

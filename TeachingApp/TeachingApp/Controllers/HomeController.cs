@@ -26,5 +26,11 @@ namespace TeachingApp.Controllers
 
             return View();
         }
+        public ActionResult Start_TeachingApp()
+        {
+            ViewBag.Message = "Your start page.";
+
+            return View();
+        }
     }
 }

@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Start_TeachingApp";
+}
+
+<div class="jumbotron">
+    <h1>Teaching Application</h1>
+    <p class="lead">This application have some test for you. Choose one.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Bild test</h2>
+        <p>
+            Test: Type in what you see on the picture.
+        </p>
+        <p><a class="btn btn-primary btn-lg" @Html.ActionLink("Bild test", "Index", "Pictures")</a></p>
+        
+
+    </div>
+    <div class="col-md-4">
+        <h2>Text test</h2>
+        <p>
+            Test: Type in missing punctuation marks in a text.
+        </p>
+        <p><a class="btn btn-primary btn-lg" @Html.ActionLink("Text test", "Index", "DifferentialTexts")</a></p>
+
+
+    </div>
+</div>
