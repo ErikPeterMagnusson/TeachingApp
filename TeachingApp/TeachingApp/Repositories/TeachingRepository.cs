@@ -51,6 +51,11 @@ namespace TeachingApp.Repositories
         {
             return context.Color.Single(i => i.ID == id);
         }
+
+        public IEnumerable<Color> GetColors()
+        {
+            return context.Color.ToList();
+        }
         #endregion
 
         #region Sentence Methods
@@ -78,5 +83,10 @@ namespace TeachingApp.Repositories
             return context.Highscore.ToList();
         }
         #endregion
+
+        public void Dispose()
+        {
+            context.Dispose();
+        }
     }
 }

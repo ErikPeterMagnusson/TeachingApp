@@ -8,27 +8,29 @@ using System.Web;
 using System.Web.Mvc;
 using TeachingApp.DataConnectionlayer;
 using TeachingApp.Models;
+using TeachingApp.Repositories;
 
 namespace TeachingApp.Controllers
 {
     public class ColorsController : Controller
     {
-        private TeachingContext db = new TeachingContext();
+        private TeachingRepository repo = new TeachingRepository();
 
         // GET: Colors
         public ActionResult Index()
         {
-            return View(db.Color.ToList());
+            Random r = new Random();
+            return View(repo.GetColorById(r.Next(1, 5)));
         }
 
         // GET: Colors/Details/5
-        public ActionResult Details(int? id)
+        /*public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Color color = db.Color.Find(id);
+            //Color color = db.Color.Find(id);
             if (color == null)
             {
                 return HttpNotFound();
@@ -51,8 +53,8 @@ namespace TeachingApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Color.Add(color);
-                db.SaveChanges();
+                //db.Color.Add(color);
+                //db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -83,44 +85,18 @@ namespace TeachingApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(color).State = EntityState.Modified;
-                db.SaveChanges();
+                //db.Entry(color).State = EntityState.Modified;
+                //db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(color);
         }
-
-        // GET: Colors/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Color color = db.Color.Find(id);
-            if (color == null)
-            {
-                return HttpNotFound();
-            }
-            return View(color);
-        }
-
-        // POST: Colors/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Color color = db.Color.Find(id);
-            db.Color.Remove(color);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
+        */
         protected override void Dispose(bool disposing)
         {
             if (disposing)
             {
-                db.Dispose();
+                repo.Dispose();
             }
             base.Dispose(disposing);
         }
