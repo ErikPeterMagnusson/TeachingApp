@@ -19,7 +19,7 @@ namespace TeachingApp.Models
     }
 
     //Viewmodel
-    //Innehållande all info för Picture (utom ID?)
+    //Innehållande all info för Picture
     //Och en extra string för det användaren kan vilja skriva
     public class PictureViewModel
     {
@@ -51,6 +51,16 @@ namespace TeachingApp.Models
         public int ID { get; set; }
         public string Text { get; set; }
     }
+    //Viewmodel för Sentence
+    //Innehållande all info för Sentence
+    //Och en extra string för det användaren kan vilja skriva
+    public class SentenceViewModel
+    {
+        public int ID { get; set; }
+        public string Text { get; set; }
+        public string UserResponse { get; set; }
+    }
+
     // DATAMODEL FOR QUESTION
     public class Question
     {

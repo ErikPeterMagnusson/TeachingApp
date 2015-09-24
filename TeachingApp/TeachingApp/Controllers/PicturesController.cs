@@ -16,7 +16,7 @@ namespace TeachingApp.Controllers
     {
         private TeachingRepository repo = new TeachingRepository();
 
-        // GET: Pictures .GetPictureById(r.Next(1, 5))
+        // GET: 
         public ActionResult Index(string message)
         {
             ViewBag.Message = message;
@@ -50,13 +50,10 @@ namespace TeachingApp.Controllers
                     ViewBag.Message = "Sorry! Wrong answer.";
                     return View(viewModel);
                 }
-
-                return RedirectToAction("Index", new { message = ViewBag.Message });
-                //return View();
             }
-
             return View();
         }
+
         /*
         // GET: Pictures/Details/5
         public ActionResult Details(int? id)

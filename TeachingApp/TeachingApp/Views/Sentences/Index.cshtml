@@ -1,33 +1,34 @@
-﻿@model IEnumerable<TeachingApp.Models.Sentence>
+﻿@model TeachingApp.Models.SentenceViewModel
 
-@{
-    ViewBag.Title = "Index";
+@{ViewBag.Title = "Sentence Test";
 }
 
-<h2>Index</h2>
+<div class="col-md-offset-4">
+    <h3>@ViewBag.Message</h3>
+</div>
+<h2>Sentence test</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Text)
-        </th>
-        <th></th>
-    </tr>
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10" style="margin-top: 0px;">
+        <h2>@Model.Text </h2>
+    </div>
+</div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Text)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
+    @using (Html.BeginForm("Index", "Sentences", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
 
-</table>
+        <div class="form-group">
+            <div class="col-md-offset-4 col-md-8">
+                <hr />
+                Vilken mening kan du bilda med hjälp av orden?
+                <input type="hidden" name="ID" value="@Model.ID">
+                <input type="hidden" name="Name" value="@Model.Text">
+                <input type="text" name="UserResponseSentence">
+                <input type="submit" value="Submit" class="btn btn-default" />
+                <hr />
+                @Html.ActionLink("End your Test", "Index", "Home")
+            </div>
+        </div>
+    }
+
