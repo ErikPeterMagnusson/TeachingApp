@@ -32,6 +32,11 @@ namespace TeachingApp.Repositories
         #endregion
 
         #region DifferentialText Methods
+
+        public IEnumerable<DifferentialText> GetAllDifferentialTexts()
+        {
+            return context.DifferentialText.ToList();
+        }
         public DifferentialText GetDifferentialTextById(int id)
         {
             return context.DifferentialText.Single(i => i.ID == id);
