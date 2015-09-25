@@ -26,7 +26,7 @@ namespace TeachingApp.Repositories
 
         public bool ComparePicture(int id, string inputWord)
         {
-            if (inputWord == context.Picture.Single(i => i.ID == id).Word)
+            if (inputWord.ToLower() == context.Picture.Single(i => i.ID == id).Word.ToLower())
                 return true;
             else
                 return false;
@@ -72,12 +72,13 @@ namespace TeachingApp.Repositories
         }
         public bool CompareSentence(int id, string inputSentence)
         {
+            var h = context.Sentence.Single(i => i.ID == id).Text;
             if (inputSentence == context.Sentence.Single(i => i.ID == id).Text)
                 return true;
             else
                 return false;
         }
-        public Sentence ScrumbleSentence(int id, string inputSentence)
+        public Sentence ScrambleSentence(int id, string inputSentence)
         {
             if (inputSentence == context.Sentence.Single(i => i.ID == id).Text)
             {
@@ -88,12 +89,9 @@ namespace TeachingApp.Repositories
                 Random random = new Random();
 
                 string[] scElements = elements.OrderBy(r => random.Next()).ToArray();
-                // Dela upp texten i enskilda ord
-                // Scrambla
-                // Sätt ihop
-                // Returnera nya texten
-                //return newSentence;
+
                 Sentence sentence = new Sentence();
+                sentence.ID = id;
                 foreach (string s in scElements)
                 {
                     sentence.Text += s + " ";
