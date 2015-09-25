@@ -70,9 +70,9 @@ namespace TeachingApp.Repositories
         {
             return context.Sentence.Single(i => i.ID == id);
         }
-        public bool CompareSentence(int id, string inputSentence)
+        public bool CompareSentence(int id, string UserResponseSentence)
         {
-            if (inputSentence == context.Sentence.Single(i => i.ID == id).Text)
+            if (UserResponseSentence == context.Sentence.Single(i => i.ID == id).Text)
                 return true;
             else
                 return false;
@@ -88,11 +88,6 @@ namespace TeachingApp.Repositories
                 Random random = new Random();
 
                 string[] scElements = elements.OrderBy(r => random.Next()).ToArray();
-                // Dela upp texten i enskilda ord
-                // Scrambla
-                // Sätt ihop
-                // Returnera nya texten
-                //return newSentence;
                 Sentence sentence = new Sentence();
                 foreach (string s in scElements)
                 {
