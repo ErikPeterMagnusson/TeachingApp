@@ -82,7 +82,8 @@ namespace TeachingApp.Repositories
             if (inputSentence == context.Sentence.Single(i => i.ID == id).Text)
             {
 
-                string[] elements = inputSentence.Split(' ', ',', '.', '\n', '\r', '\t');
+                char[] separator = new char[] { ' ', ',', '.', '\n', '\r', '\t' };
+                string[] elements = inputSentence.Split(separator, StringSplitOptions.RemoveEmptyEntries);
 
                 Random random = new Random();
 
@@ -95,8 +96,7 @@ namespace TeachingApp.Repositories
                 Sentence sentence = new Sentence();
                 foreach (string s in scElements)
                 {
-                    if (s != "")
-                        sentence.Text += s + " ";
+                    sentence.Text += s + " ";
                 }
 
                 return sentence;
