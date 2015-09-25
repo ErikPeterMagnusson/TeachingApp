@@ -259,31 +259,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Pictures\Create.cshtml" />
-    <Content Include="Views\Pictures\Delete.cshtml" />
-    <Content Include="Views\Pictures\Details.cshtml" />
-    <Content Include="Views\Pictures\Edit.cshtml" />
     <Content Include="Views\Pictures\Index.cshtml" />
-    <Content Include="Views\DifferentialTexts\Create.cshtml" />
-    <Content Include="Views\DifferentialTexts\Delete.cshtml" />
-    <Content Include="Views\DifferentialTexts\Details.cshtml" />
-    <Content Include="Views\DifferentialTexts\Edit.cshtml" />
     <Content Include="Views\DifferentialTexts\Index.cshtml" />
     <Content Include="Views\Colors\Index.cshtml" />
-    <Content Include="Views\Sentences\Create.cshtml" />
-    <Content Include="Views\Sentences\Delete.cshtml" />
-    <Content Include="Views\Sentences\Details.cshtml" />
-    <Content Include="Views\Sentences\Edit.cshtml" />
     <Content Include="Views\Sentences\Index.cshtml" />
-    <Content Include="Views\Questions\Create.cshtml" />
-    <Content Include="Views\Questions\Delete.cshtml" />
-    <Content Include="Views\Questions\Details.cshtml" />
-    <Content Include="Views\Questions\Edit.cshtml" />
     <Content Include="Views\Questions\Index.cshtml" />
-    <Content Include="Views\Highscores\Create.cshtml" />
-    <Content Include="Views\Highscores\Delete.cshtml" />
-    <Content Include="Views\Highscores\Details.cshtml" />
-    <Content Include="Views\Highscores\Edit.cshtml" />
     <Content Include="Views\Highscores\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

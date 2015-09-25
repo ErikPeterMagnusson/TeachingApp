@@ -2,32 +2,23 @@
 @{ViewBag.Title = "Sentence Test";
 }
 
-<div class="col-md-offset-4">
-    <h3>@ViewBag.Message</h3>
-</div>
+<h3>@ViewBag.Message</h3>
 <h2>Sentence test</h2>
+<h2>@Model.Text</h2>
 
-<div class="form-group">
-    <div class="col-md-offset-2 col-md-10" style="margin-top: 0px;">
-        <h2>@Model.Text</h2>
+@using (Html.BeginForm("Index", "Sentences", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <hr />
+        Vilken mening kan du bilda med hjälp av orden?
+        <input type="hidden" name="ID" value="@Model.ID">
+        <input type="hidden" name="Name" value="@Model.Text">
+        <input type="text" name="UserResponse">
+        <input type="submit" value="Submit" class="btn btn-default" />
+        <hr />
+        @Html.ActionLink("End your Test", "Index", "Home")
     </div>
-</div>
-
-    @using (Html.BeginForm("Index", "Sentences", FormMethod.Post))
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-group">
-            <div class="col-md-offset-4 col-md-8">
-                <hr />
-                Vilken mening kan du bilda med hjälp av orden?
-                <input type="hidden" name="ID" value="@Model.ID">
-                <input type="hidden" name="Name" value="@Model.Text">
-                <input type="text" name="UserResponseSentence">
-                <input type="submit" value="Submit" class="btn btn-default" />
-                <hr />
-                @Html.ActionLink("End your Test", "Index", "Home")
-            </div>
-        </div>
-    }
+}
 

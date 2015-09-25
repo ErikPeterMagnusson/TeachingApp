@@ -63,9 +63,10 @@ namespace TeachingApp.Models
     //Och en extra string för det användaren kan vilja skriva
     public class SentenceViewModel
     {
+        [Key]
         public int ID { get; set; }
         public string Text { get; set; }
-        public string UserResponseSentence { get; set; }
+        public string UserResponse { get; set; }
     }
 
     // DATAMODEL FOR QUESTION
