@@ -36,7 +36,7 @@ namespace TeachingApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (repo.GetColorById(viewModel.ID).ColorText == viewModel.UserResponse)
+                if (repo.GetColorById(viewModel.ID).ID == viewModel.UserResponse)
                 {
                     ViewBag.Message = "Good answer.";
                     return RedirectToAction("Index", new { message = ViewBag.Message });
