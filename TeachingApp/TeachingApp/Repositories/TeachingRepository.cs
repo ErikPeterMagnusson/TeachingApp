@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using TeachingApp.DataConnectionlayer;
 using TeachingApp.Models;
+using System.Text.RegularExpressions;
+
 
 namespace TeachingApp.Repositories
 {
@@ -69,6 +71,31 @@ namespace TeachingApp.Repositories
                 return true;
             else
                 return false;
+        }
+        public Sentence ScrumbleSentence(int id, string inputSentence)
+        {
+            if (inputSentence == context.Sentence.Single(i => i.ID == id).Text)
+            {
+
+                string pattern = @"\s-\s?[, ]?\s?-\s";
+                string[] elements = Regex.Split(inputSentence, pattern);
+                Random random = new Random();
+
+                string[] scElements = elements.OrderBy(r => random.Next()).ToArray();
+                // Dela upp texten i enskilda ord
+                // Scrambla
+                // Sätt ihop
+                // Returnera nya texten
+                //return newSentence;
+                Sentence sentence = new Sentence();
+                foreach (string s in scElements)
+                {
+                    sentence.Text += s;
+                }
+
+                return sentence;
+            }
+            return new Sentence();
         }
         #endregion
 

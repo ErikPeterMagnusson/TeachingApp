@@ -50,11 +50,7 @@ namespace TeachingApp.Controllers
                     ViewBag.Message = "Sorry! Wrong answer.";
                     return View(viewModel);
                 }
-
-                return RedirectToAction("Index", new { message = ViewBag.Message });
-                //return View();
             }
-
             return View();
         }
         /*

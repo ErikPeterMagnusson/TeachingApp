@@ -21,12 +21,13 @@ namespace TeachingApp.Controllers
         {
             ViewBag.Message = message;
             Random r = new Random();
-            var sentence = repo.GetSentenceById(r.Next(1, 5));
+            var sentence = repo.GetSentenceById(r.Next(1, 6));
+            var s = repo.ScrumbleSentence(sentence.ID, sentence.Text);
 
             SentenceViewModel viewModel = new SentenceViewModel()
             {
-                 ID = sentence.ID,
-                 Text = sentence.Text,
+                 ID = s.ID,
+                 Text = s.Text,
             };
             return View(viewModel); //
         }
@@ -39,7 +40,7 @@ namespace TeachingApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (repo.CompareSentence(viewModel.ID, viewModel.UserResponse))
+                if (repo.CompareSentence(viewModel.ID, viewModel.UserResponseSentence))
                 {
                     ViewBag.Message = "Good answer.";
                     return RedirectToAction("Index", new { message = ViewBag.Message });
