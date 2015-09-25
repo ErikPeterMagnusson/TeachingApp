@@ -8,17 +8,26 @@ using System.Web;
 using System.Web.Mvc;
 using TeachingApp.DataConnectionlayer;
 using TeachingApp.Models;
+using TeachingApp.Repositories;
 
 namespace TeachingApp.Controllers
 {
     public class DifferentialTextsController : Controller
     {
-        private TeachingContext db = new TeachingContext();
+        private TeachingContext db = new TeachingContext(); //Ska inte finnas, därför ni har en repo
+        private TeachingRepository repo = new TeachingRepository();
 
         // GET: DifferentialTexts
         public ActionResult Index()
         {
-            return View(db.DifferentialText.ToList());
+            return View(repo.GetAllDifferentialTexts());
+        }
+
+        [HttpPost]
+        public ActionResult differentialInput ()
+        {
+            if (repo.CompareDifferentialInput( = true) { Console.WriteLine="true" }
+            Console.WriteLine="false";
         }
 
         // GET: DifferentialTexts/Details/5
