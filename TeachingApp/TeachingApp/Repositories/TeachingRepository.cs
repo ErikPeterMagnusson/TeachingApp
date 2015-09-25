@@ -82,7 +82,6 @@ namespace TeachingApp.Repositories
         {
             if (inputSentence == context.Sentence.Single(i => i.ID == id).Text)
             {
-
                 char[] separator = new char[] { ' ', ',', '.', '\n', '\r', '\t' };
                 string[] elements = inputSentence.Split(separator, StringSplitOptions.RemoveEmptyEntries);
 

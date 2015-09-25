@@ -50,7 +50,7 @@ namespace TeachingApp.Models
         [Key]
         public int ID { get; set; }
         public string ColorText { get; set; }
-        public string UserResponse { get; set; }
+        public int UserResponse { get; set; }
     }
     // DATAMODEL FOR SENTENCE
     public class Sentence
