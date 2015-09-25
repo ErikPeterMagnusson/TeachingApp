@@ -115,6 +115,11 @@ namespace TeachingApp.Repositories
             return context.Highscore.Single(i => i.ID == id);
         }
 
+        public Highscore GetHighscoreByName(string name)
+        {
+            return context.Highscore.Single(n => n.Name == name);
+        }
+
         public IEnumerable<Highscore> GetHighscores()
         {
             return context.Highscore.ToList();

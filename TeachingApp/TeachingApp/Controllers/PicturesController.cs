@@ -44,8 +44,7 @@ namespace TeachingApp.Controllers
                 {
                     ViewBag.Message = "Good answer.";
                     Highscore newHighscore = new Highscore();
-                    newHighscore.Score += 1;
-                    repo.SetHighscore(newHighscore.ID, newHighscore.Score);
+                    repo.SetHighscore(newHighscore.ID, 1);
                     return RedirectToAction("Index", new { message = ViewBag.Message });
                 }
                 else

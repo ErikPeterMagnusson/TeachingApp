@@ -32,16 +32,15 @@ namespace TeachingApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index([Bind(Include = "ID,ColorText,UserResponse")] ColorViewModel viewModel)
+        public ActionResult Index([Bind(Include = "ID,ColorText,UserResponse,HighscoreName")] ColorViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
                 if (repo.GetColorById(viewModel.ID).ID == viewModel.UserResponse)
                 {
                     ViewBag.Message = "Good answer.";
-                    Highscore newHighscore = new Highscore();
-                    newHighscore.Score += 1;
-                    repo.SetHighscore(newHighscore.ID, newHighscore.Score);
+                    Highscore newHighscore = repo.GetHighscoreByName(viewModel.HighscoreName);
+                    repo.SetHighscore(newHighscore.ID, 1);
                     return RedirectToAction("Index", new { message = ViewBag.Message });
                 }
                 else
