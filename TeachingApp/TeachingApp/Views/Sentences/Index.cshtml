@@ -3,7 +3,9 @@
 }
 
 <h3>@ViewBag.Message</h3>
+
 <h2>Sentence test</h2>
+
 <h2>@Model.Text</h2>
 
 @using (Html.BeginForm("Index", "Sentences", FormMethod.Post))
@@ -13,9 +15,9 @@
     <div class="form-group">
         <hr />
         Vilken mening kan du bilda med hjälp av orden?
-        <input type="hidden" name="ID" value="@Model.ID">
-        <input type="hidden" name="Name" value="@Model.Text">
-        <input type="text" name="UserResponse">
+        @Html.HiddenFor(m => m.ID)
+        @Html.HiddenFor(m => m.Text)
+        @Html.EditorFor(m => m.UserResponseSentence)
         <input type="submit" value="Submit" class="btn btn-default" />
         <hr />
         @Html.ActionLink("End your Test", "Index", "Home")

@@ -48,11 +48,11 @@ namespace TeachingApp.Migrations
 
             // SEED FOR SENTENCE
             context.Sentence.AddOrUpdate(
-                new Models.Sentence { ID = 1, Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
-                new Models.Sentence { ID = 2, Text = "Nunc tempus sed lorem quis tincidunt." },
-                new Models.Sentence { ID = 3, Text = "Morbi magna nibh, suscipit ut sagittis eu, pellentesque non neque." },
-                new Models.Sentence { ID = 4, Text = "In consequat tortor quis diam tristique posuere." },
-                new Models.Sentence { ID = 5, Text = "Proin elit odio, blandit vitae eros sed, tincidunt ullamcorper enim." }
+                new Models.Sentence { ID = 1, Text = "Fröken Svensson har en grön cykel" },
+                new Models.Sentence { ID = 2, Text = "I morgon hoppas vi att solen skiner" },
+                new Models.Sentence { ID = 3, Text = "Den röda fågeln sitter på en gren och sjunger" },
+                new Models.Sentence { ID = 4, Text = "Lisa tycker om att titta på TV" },
+                new Models.Sentence { ID = 5, Text = "Tobias sjunger en aria för Lisa" }
                 );
 
             // SEED FOR QUESTION
@@ -66,11 +66,11 @@ namespace TeachingApp.Migrations
 
             // SEED FOR HIGHSCORE
             context.Highscore.AddOrUpdate(
-                new Models.Highscore { ID = 1, Name = "Gyskbarn1", Score = 10 },
-                new Models.Highscore { ID = 2, Name = "Gyskbarn2", Score = 9 },
-                new Models.Highscore { ID = 3, Name = "Gyskbarn3", Score = 8 },
-                new Models.Highscore { ID = 4, Name = "Gyskbarn4", Score = 7 },
-                new Models.Highscore { ID = 5, Name = "Gyskbarn5", Score = 6 }
+                new Models.Highscore { ID = 1, Name = "Gyskbarn1", Score = 5, Submitted = DateTime.Now },
+                new Models.Highscore { ID = 2, Name = "Gyskbarn2", Score = 9, Submitted = DateTime.Now },
+                new Models.Highscore { ID = 3, Name = "Gyskbarn3", Score = 8, Submitted = DateTime.Now },
+                new Models.Highscore { ID = 4, Name = "Gyskbarn4", Score = 7, Submitted = DateTime.Now },
+                new Models.Highscore { ID = 5, Name = "Gyskbarn5", Score = 6, Submitted = DateTime.Now }
                 );
         } // SEEDING END
     } // MIGRATION CONNECTION/DIRECTION END

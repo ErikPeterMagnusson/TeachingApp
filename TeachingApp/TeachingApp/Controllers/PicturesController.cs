@@ -16,7 +16,7 @@ namespace TeachingApp.Controllers
     {
         private TeachingRepository repo = new TeachingRepository();
 
-        // GET: Pictures .GetPictureById(r.Next(1, 6))
+        // GET: Pictures
         public ActionResult Index(string message)
         {
             ViewBag.Message = message;

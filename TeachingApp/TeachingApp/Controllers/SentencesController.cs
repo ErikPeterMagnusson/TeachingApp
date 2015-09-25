@@ -36,11 +36,11 @@ namespace TeachingApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index([Bind(Include = "ID,Text,UserResponse")] SentenceViewModel viewModel)
+        public ActionResult Index([Bind(Include = "ID,Text,UserResponseSentence")] SentenceViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
-                if (repo.CompareSentence(viewModel.ID, viewModel.UserResponse))
+                if (repo.CompareSentence(viewModel.ID, viewModel.UserResponseSentence))
                 {
                     ViewBag.Message = "Good answer.";
                     return RedirectToAction("Index", new { message = ViewBag.Message });

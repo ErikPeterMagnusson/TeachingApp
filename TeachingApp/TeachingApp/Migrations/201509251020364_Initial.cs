@@ -33,6 +33,7 @@ namespace TeachingApp.Migrations
                         ID = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         Score = c.Int(nullable: false),
+                        Submitted = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.ID);
             

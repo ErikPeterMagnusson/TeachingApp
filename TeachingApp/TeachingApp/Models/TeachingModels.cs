@@ -23,10 +23,11 @@ namespace TeachingApp.Models
     //Och en extra string för det användaren kan vilja skriva
     public class PictureViewModel
     {
+        [Key]
         public int ID { get; set; }
         public string Name { get; set; }
         public string Word { get; set; }
-        public string UserResponse { get; set; }  
+        public string UserResponse { get; set; }
     }
 
     // DATAMODEL FOR DIFFERENTIAL TEXT
@@ -66,7 +67,7 @@ namespace TeachingApp.Models
         [Key]
         public int ID { get; set; }
         public string Text { get; set; }
-        public string UserResponse { get; set; }
+        public string UserResponseSentence { get; set; }
     }
 
     // DATAMODEL FOR QUESTION
@@ -85,5 +86,6 @@ namespace TeachingApp.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public int Score { get; set; }
+        public DateTime Submitted { get; set; }
     }
 } // NAMESPACE TEACHINGAPP.MODELS END
