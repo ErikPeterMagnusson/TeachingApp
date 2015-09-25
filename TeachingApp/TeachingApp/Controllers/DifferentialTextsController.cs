@@ -24,11 +24,14 @@ namespace TeachingApp.Controllers
         }
 
         [HttpPost]
-        public ActionResult differentialInput ()
-        {
-            if (repo.CompareDifferentialInput( = true) { Console.WriteLine="true" }
-            Console.WriteLine="false";
-        }
+        //public ActionResult differentialInput ()
+        //{
+            //if (repo.CompareDifferentialInput) 
+            //{
+            //    Console.WriteLine="true" 
+            //}
+            //Console.WriteLine="false";
+        //}
 
         // GET: DifferentialTexts/Details/5
         public ActionResult Details(int? id)
