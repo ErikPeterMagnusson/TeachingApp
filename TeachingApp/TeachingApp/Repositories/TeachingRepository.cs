@@ -82,8 +82,8 @@ namespace TeachingApp.Repositories
             if (inputSentence == context.Sentence.Single(i => i.ID == id).Text)
             {
 
-                string pattern = @"\s-\s?[, ]?\s?-\s";
-                string[] elements = Regex.Split(inputSentence, pattern);
+                string[] elements = inputSentence.Split(' ', ',', '.', '\n', '\r', '\t');
+
                 Random random = new Random();
 
                 string[] scElements = elements.OrderBy(r => random.Next()).ToArray();
@@ -95,7 +95,8 @@ namespace TeachingApp.Repositories
                 Sentence sentence = new Sentence();
                 foreach (string s in scElements)
                 {
-                    sentence.Text += s;
+                    if (s != "")
+                        sentence.Text += s + " ";
                 }
 
                 return sentence;

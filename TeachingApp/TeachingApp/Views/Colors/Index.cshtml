@@ -10,15 +10,16 @@
 
 @using (Html.BeginForm("index", "Colors", FormMethod.Post))
 {
+    @Html.AntiForgeryToken()
     <div class="form-group">
         <hr />
         <input type="hidden" name="ID" value="@Model.ID">
         <input type="hidden" name="ColorText" value="@Model.ColorText">
-        <input type="button" name="UserResponse" class="btn-danger btn-lg" value="1" />
-        <input type="button" name="UserResponse" class="btn-success btn-lg" value="2" />
-        <input type="button" name="UserResponse" class="btn-primary btn-lg" value="3" />
-        <input type="button" name="UserResponse" class="btn-warning btn-lg" value="4" />
-        <input type="button" name="UserResponse" class="btn-default btn-lg" value="5" />
+        <input type="submit" name="UserResponse" class="btn-danger btn-lg" value="1" />
+        <input type="submit" name="UserResponse" class="btn-success btn-lg" value="2" />
+        <input type="submit" name="UserResponse" class="btn-primary btn-lg" value="3" />
+        <input type="submit" name="UserResponse" class="btn-warning btn-lg" value="4" />
+        <input type="submit" name="UserResponse" class="btn-default btn-lg" value="5" />
         <hr />
         @Html.ActionLink("End your Test", "Index", "Home")
     </div>
