@@ -119,6 +119,17 @@ namespace TeachingApp.Repositories
         {
             return context.Highscore.ToList();
         }
+
+        public Highscore SetHighscore(int id, int score)
+        {
+            Highscore NewHighscore = GetHighscoreById(id);
+            if (id == 0) return NewHighscore;
+            NewHighscore.Score += score;
+            context.Entry(NewHighscore).State = System.Data.Entity.EntityState.Modified;
+            context.SaveChanges();
+
+            return NewHighscore;
+        }
         #endregion
 
         public void Dispose()

@@ -20,10 +20,13 @@
     <div class="col-md-offset-4 col-md-8">
         <hr />
         Vad föreställer bilden?
-        <input type="hidden" name="ID" value="@Model.ID">
-        <input type="hidden" name="Name" value="@Model.Name">
-        <input type="hidden" name="Word" value="@Model.Word">
-        <input type="text" name="UserResponse">
+        @Html.HiddenFor(m => m.ID)
+        @Html.HiddenFor(m => m.Name)
+        @Html.HiddenFor(m => m.Word)
+        @Html.EditorFor(m => m.UserResponse)
+        <hr />
+        Ange ditt namn!
+        @Html.EditorFor(m => m.HighscoreName)
         <input type="submit" value="Submit" class="btn btn-default" />
         <hr />
         @Html.ActionLink("End your Test", "Index", "Home")

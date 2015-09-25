@@ -28,6 +28,7 @@ namespace TeachingApp.Models
         public string Name { get; set; }
         public string Word { get; set; }
         public string UserResponse { get; set; }
+        public string HighscoreName { get; set; }
     }
 
     // DATAMODEL FOR DIFFERENTIAL TEXT
@@ -51,6 +52,7 @@ namespace TeachingApp.Models
         public int ID { get; set; }
         public string ColorText { get; set; }
         public int UserResponse { get; set; }
+        public string HighscoreName { get; set; }
     }
     // DATAMODEL FOR SENTENCE
     public class Sentence
@@ -68,6 +70,7 @@ namespace TeachingApp.Models
         public int ID { get; set; }
         public string Text { get; set; }
         public string UserResponseSentence { get; set; }
+        public string HighscoreName { get; set; }
     }
 
     // DATAMODEL FOR QUESTION

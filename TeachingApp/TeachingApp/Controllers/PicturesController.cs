@@ -43,6 +43,9 @@ namespace TeachingApp.Controllers
                 if (repo.ComparePicture(viewModel.ID, viewModel.UserResponse))
                 {
                     ViewBag.Message = "Good answer.";
+                    Highscore newHighscore = new Highscore();
+                    newHighscore.Score += 1;
+                    repo.SetHighscore(newHighscore.ID, newHighscore.Score);
                     return RedirectToAction("Index", new { message = ViewBag.Message });
                 }
                 else
